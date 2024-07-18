@@ -111,5 +111,5 @@ ggsave(filename = "figures/homes_desc.png", plot=G1,
 
 G2 <- ggarrange(g3, g5, g4, ncol = 3, nrow = 1, labels = c('(c)', '(d)', '(e)'))
 G <- ggarrange(G1, G2, ncol = 1, nrow = 2)
-ggsave(filename = "figures/homes_desc_sub.png", plot=G,
+ggsave(filename = "figures/supporting/homes_desc_sub.png", plot=G,
        width = 12, height = 8, unit = "in", dpi = 300)

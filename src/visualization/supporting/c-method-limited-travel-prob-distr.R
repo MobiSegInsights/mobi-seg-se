@@ -89,5 +89,5 @@ g2 <- ggplot(df_expanded, aes(x=angle, y = d, fill = fd)) +
         strip.background = element_blank(),
         legend.position = 'top')
 
-ggsave(filename = glue("figures/limited_travel_dist_d.png"), plot=g2,
+ggsave(filename = glue("figures/supporting/limited_travel_dist_d.png"), plot=g2,
        width = 12, height = 4, unit = "in", dpi = 300)

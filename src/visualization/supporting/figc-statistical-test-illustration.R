@@ -135,7 +135,7 @@ df.exp.b <- df.exp.b %>%
          n = n*100)
 
 # df.exp <- as.data.frame(read_parquet('results/statistical_tests/exposure.parquet'))
-df.exp <- as.data.frame(read_parquet('results/plot/group_interactions_plot_combined.parquet'))
+df.exp <- as.data.frame(read_parquet('results/plot/group_exposure_plot_combined.parquet'))
 rename_dict <- c(
   'No-homophily' = "No-dest. preference",
   "Equalized mobility & no-homophily" = "No-dest. preference \n& equalized mobility"
