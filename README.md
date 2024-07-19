@@ -19,7 +19,7 @@ Anonymized aggregated data and code to reproduce our results are provided in thi
 ## Scripts
 The repo contains the scripts (`src/`), libraries (`lib/`) for conducting the data processing, analysis, and visualisation.
 The original input data are stored under `dbs/` locally and intermediate results are stored in a local database.
-Only results directly used for visualisation in the manuscript are stored under `results/`.
+The aggregated data directly used for visualisation and statistical tests in the manuscript are stored under `data/`.
 The produced figures are stored under `figures/`.
 
 Under `src/`, the scripts are stored by their functionality, with the first number indicating the
