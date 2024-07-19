@@ -5,5 +5,5 @@ dbs
 .ipynb_checkpoints
 .Rhistory
 .Rproj.user
-results/statistical_tests/ice_shuffled.parquet
-results/statistical_tests/exposure_shuffled.parquet
+results
+src/28-results-data-check.ipynb
