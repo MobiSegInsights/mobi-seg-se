@@ -1,5 +1,5 @@
-# Title     : Simulations and exposure
-# Objective : Simulation results and exposure insights
+# Title     : Simulations and interactions
+# Objective : Simulation results and interactions insights
 # Created by: Yuan Liao
 # Created on: 2024-02-29
 
@@ -87,7 +87,7 @@ ggsave(filename = "figures/panels/fig2_b.png", plot=g1,
        width = 6, height = 3.5, unit = "in", dpi = 300, bg = 'white')
 
 # --- Group interactions ----
-df.inter <- as.data.frame(read_parquet('results/plot/group_exposure_plot_combined.parquet'))
+df.inter <- as.data.frame(read_parquet('results/plot/group_interactions_plot_combined.parquet'))
 inter.rename_dict <- c(
   DF = "NF",
   NF = "MF",
@@ -200,7 +200,7 @@ combined_image1_width <- image_info(combined_image1)$width
 ## Combine image1 with combined_image1
 # Get height of image 1
 image4_height <- image_info(image4)$height
-image3_resized <- image_resize(image_read("figures/panels/group_exposure_diagram.png"),
+image3_resized <- image_resize(image_read("figures/panels/group_interaction_diagram.png"),
                                paste0("x", image4_height)) %>%
     image_annotate('c', gravity = "northwest", color = "black", size = 70, weight = 700)
 
@@ -213,3 +213,14 @@ blank_space_w <- image_blank(combined_image1_width, 1, color = "white")
 combined_image <- image_append(c(combined_image1, blank_space_w, combined_image2), stack = T)
 image_write(combined_image, "figures/panels/seg_disp_fig2.png")
 
+# Combined image (new submission)
+image4 <- read.img(path="figures/panels/fig2_d.png", lb='b')
+image4_height <- image_info(image4)$height
+image3_resized <- image_resize(image_read("figures/panels/group_interaction_diagram.png"),
+                               paste0("x", image4_height)) %>%
+    image_annotate('a', gravity = "northwest", color = "black", size = 70, weight = 700)
+
+# Create a blank space image
+blank_space_h2 <- image_blank(2, image4_height, color = "white")
+combined_image2 <- image_append(c(image3_resized, blank_space_h2, image4), stack = F)
+image_write(combined_image2, "figures/panels/seg_groups.png")

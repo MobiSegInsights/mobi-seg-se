@@ -1,5 +1,5 @@
-# The Uneven Impact of Mobility on the Segregation of Native and Foreign-born Individuals
-This is a repository to reproduce the analyses and figures in https://arxiv.org/abs/2205.03639, under its 
+# The Effect of Limited Mobility on the Experienced Segregation of Foreign-born Minorities
+This is a repository to reproduce the analyses and figures in https://arxiv.org/abs/2407.00404, under its 
 [parent project](https://github.com/MobiSegInsights).
 
 ## Dependencies
