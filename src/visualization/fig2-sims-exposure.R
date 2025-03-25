@@ -187,6 +187,17 @@ image1 <- read.img(path="figures/panels/simulation_diagram.png", lb='a')
 image2 <- read.img(path="figures/panels/fig2_b.png", lb='b')
 image4 <- read.img(path="figures/panels/fig2_d.png", lb='d')
 
+## Combine image 1 and 2 for the new Figure 2
+# Get width of image 2
+image2_height <- image_info(image2)$height
+image1_resized <- image_resize(image_read("figures/panels/simulation_diagram.png"),
+                               paste0("x", image2_height)) %>%
+    image_annotate('a', gravity = "northwest", color = "black", size = 70, weight = 700)
+
+# Create blank space between them and stack three
+blank_space_h1 <- image_blank(2, image2_height, color = "white")
+combined_image <- image_append(c(image1_resized, blank_space_h1, image2), stack = F)
+image_write(combined_image, "figures/panels/seg_disp_fig2.png")
 
 ## Combine images 2-4
 # Get width of image 2
